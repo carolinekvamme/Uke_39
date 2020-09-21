@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funksjon</title>
+    <style>
+      body{
+        text-align: center;
+        background-color: #4C5760;
+        color: #93A8AC;
+      }
+      #pFarge, #pTekst, #pNavn{
+        cursor: pointer;
+        font-size: 25px;
+      }
+      
+    </style>
+</head>
+<body>
+    <h1>Funksjoner</h1>
+    <p id="pTekst">Hvis du trykker på meg endres teksten!</p>
+    <p id="pFarge">Hvis du trykker på meg endres fargen!</p>
+    <p id="pNavn">Hvis du trykker på meg kommer det opp etternavn!</p>
+
+
+
+    <script>
+        let pTekst = document.getElementById("pTekst"); //P-elementet hentes ut
+        let pFarge = document.getElementById("pFarge");
+        let pNavn = document.getElementById("pNavn");
+        var navn = ["Kvamme", "Johnsen", "Hansen", "Christensen", "Kristensen"];
+        var i = 0; 
+
+        function endreTekst() {
+          pTekst.innerHTML = "Du endret teksten";
+        }
+        pFarge.onclick = function() {
+          pFarge.style.color = "#D7CEB2";
+        }
+
+        function leggTilNavn() {
+            pNavn.innerHTML += `
+             <p>${navn[i]}</p>
+            `;
+            i++;
+            if (i === 5){
+              i = 0; 
+            }
+        }
+
+        pTekst.onclick = endreTekst;
+        pNavn.onclick = leggTilNavn; 
+    </script>
+    
+</body>
+</html>
